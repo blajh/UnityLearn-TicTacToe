@@ -332,12 +332,12 @@ PrefabInstance:
     - target: {fileID: 4040374221083674418, guid: 4f08074ed72c74bcaa049037ba604827,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -170
       objectReference: {fileID: 0}
     - target: {fileID: 4040374221083674418, guid: 4f08074ed72c74bcaa049037ba604827,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -170
       objectReference: {fileID: 0}
     - target: {fileID: 4040374221083674418, guid: 4f08074ed72c74bcaa049037ba604827,
         type: 3}
@@ -382,7 +382,7 @@ PrefabInstance:
     - target: {fileID: 4040374221083674419, guid: 4f08074ed72c74bcaa049037ba604827,
         type: 3}
       propertyPath: m_Name
-      value: GridSpaceButton (6)
+      value: GridSpaceButton20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f08074ed72c74bcaa049037ba604827, type: 3}
@@ -688,7 +688,7 @@ PrefabInstance:
     - target: {fileID: 4040374221083674418, guid: 4f08074ed72c74bcaa049037ba604827,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -170
       objectReference: {fileID: 0}
     - target: {fileID: 4040374221083674418, guid: 4f08074ed72c74bcaa049037ba604827,
         type: 3}
@@ -738,7 +738,7 @@ PrefabInstance:
     - target: {fileID: 4040374221083674419, guid: 4f08074ed72c74bcaa049037ba604827,
         type: 3}
       propertyPath: m_Name
-      value: GridSpaceButton (3)
+      value: GridSpaceButton10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f08074ed72c74bcaa049037ba604827, type: 3}
@@ -813,12 +813,12 @@ PrefabInstance:
     - target: {fileID: 4040374221083674418, guid: 4f08074ed72c74bcaa049037ba604827,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 170
       objectReference: {fileID: 0}
     - target: {fileID: 4040374221083674418, guid: 4f08074ed72c74bcaa049037ba604827,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -170
       objectReference: {fileID: 0}
     - target: {fileID: 4040374221083674418, guid: 4f08074ed72c74bcaa049037ba604827,
         type: 3}
@@ -863,7 +863,7 @@ PrefabInstance:
     - target: {fileID: 4040374221083674419, guid: 4f08074ed72c74bcaa049037ba604827,
         type: 3}
       propertyPath: m_Name
-      value: GridSpaceButton (8)
+      value: GridSpaceButton22
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f08074ed72c74bcaa049037ba604827, type: 3}
@@ -1012,12 +1012,12 @@ PrefabInstance:
     - target: {fileID: 4040374221083674418, guid: 4f08074ed72c74bcaa049037ba604827,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 170
       objectReference: {fileID: 0}
     - target: {fileID: 4040374221083674418, guid: 4f08074ed72c74bcaa049037ba604827,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 170
       objectReference: {fileID: 0}
     - target: {fileID: 4040374221083674418, guid: 4f08074ed72c74bcaa049037ba604827,
         type: 3}
@@ -1062,7 +1062,7 @@ PrefabInstance:
     - target: {fileID: 4040374221083674419, guid: 4f08074ed72c74bcaa049037ba604827,
         type: 3}
       propertyPath: m_Name
-      value: GridSpaceButton (2)
+      value: GridSpaceButton02
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f08074ed72c74bcaa049037ba604827, type: 3}
@@ -1341,7 +1341,7 @@ PrefabInstance:
     - target: {fileID: 4040374221083674419, guid: 4f08074ed72c74bcaa049037ba604827,
         type: 3}
       propertyPath: m_Name
-      value: GridSpaceButton (4)
+      value: GridSpaceButton11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f08074ed72c74bcaa049037ba604827, type: 3}
@@ -1421,7 +1421,7 @@ PrefabInstance:
     - target: {fileID: 4040374221083674418, guid: 4f08074ed72c74bcaa049037ba604827,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -170
       objectReference: {fileID: 0}
     - target: {fileID: 4040374221083674418, guid: 4f08074ed72c74bcaa049037ba604827,
         type: 3}
@@ -1466,7 +1466,7 @@ PrefabInstance:
     - target: {fileID: 4040374221083674419, guid: 4f08074ed72c74bcaa049037ba604827,
         type: 3}
       propertyPath: m_Name
-      value: GridSpaceButton (7)
+      value: GridSpaceButton21
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f08074ed72c74bcaa049037ba604827, type: 3}
@@ -1541,7 +1541,7 @@ PrefabInstance:
     - target: {fileID: 4040374221083674418, guid: 4f08074ed72c74bcaa049037ba604827,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 170
       objectReference: {fileID: 0}
     - target: {fileID: 4040374221083674418, guid: 4f08074ed72c74bcaa049037ba604827,
         type: 3}
@@ -1591,7 +1591,7 @@ PrefabInstance:
     - target: {fileID: 4040374221083674419, guid: 4f08074ed72c74bcaa049037ba604827,
         type: 3}
       propertyPath: m_Name
-      value: GridSpaceButton (5)
+      value: GridSpaceButton12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f08074ed72c74bcaa049037ba604827, type: 3}
@@ -1745,7 +1745,7 @@ PrefabInstance:
     - target: {fileID: 4040374221083674418, guid: 4f08074ed72c74bcaa049037ba604827,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 170
       objectReference: {fileID: 0}
     - target: {fileID: 4040374221083674418, guid: 4f08074ed72c74bcaa049037ba604827,
         type: 3}
@@ -1790,7 +1790,7 @@ PrefabInstance:
     - target: {fileID: 4040374221083674419, guid: 4f08074ed72c74bcaa049037ba604827,
         type: 3}
       propertyPath: m_Name
-      value: GridSpaceButton (1)
+      value: GridSpaceButton01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f08074ed72c74bcaa049037ba604827, type: 3}
@@ -1970,12 +1970,12 @@ PrefabInstance:
     - target: {fileID: 4040374221083674418, guid: 4f08074ed72c74bcaa049037ba604827,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -170
       objectReference: {fileID: 0}
     - target: {fileID: 4040374221083674418, guid: 4f08074ed72c74bcaa049037ba604827,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 170
       objectReference: {fileID: 0}
     - target: {fileID: 4040374221083674418, guid: 4f08074ed72c74bcaa049037ba604827,
         type: 3}
@@ -2020,7 +2020,7 @@ PrefabInstance:
     - target: {fileID: 4040374221083674419, guid: 4f08074ed72c74bcaa049037ba604827,
         type: 3}
       propertyPath: m_Name
-      value: GridSpaceButton
+      value: GridSpaceButton00
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f08074ed72c74bcaa049037ba604827, type: 3}
