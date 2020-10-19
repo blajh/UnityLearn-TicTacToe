@@ -6,10 +6,17 @@ public class GridSpace : MonoBehaviour
 {
 	public Button button;
 	public Text buttonText;
-	public string playerSide;
+
+	private GameManager gameManager;
+
+	public void SetGameManagerReference(GameManager manager) {
+		gameManager = manager;
+	}
 
 	public void SetSpace() {
-		buttonText.text = playerSide;
+		buttonText.text = gameManager.GetPlayerSide();
 		button.interactable = false;
+		gameManager.EndTurn();
 	}
+
 }
