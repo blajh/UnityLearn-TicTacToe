@@ -7,7 +7,11 @@ public class GameManager : MonoBehaviour
 	public Text[] buttonArray;
 	private string playerSide;
 
+	public GameObject gameOverPanel;
+	public Text gameOverText;
+
 	private void Awake() {
+		gameOverPanel.SetActive(false); 
 		playerSide = "X";
 		SetGameManagerReferenceOnButtons();
 	}
@@ -80,6 +84,10 @@ public class GameManager : MonoBehaviour
 		for (int i = 0; i < buttonArray.Length; i++) {
 			buttonArray[i].GetComponentInParent<Button>().interactable = false;
 		}
+
+		gameOverPanel.SetActive(true);
+		gameOverText.text = playerSide + " Wins!";
+
 	}
 
 	void ChangeSides() {
