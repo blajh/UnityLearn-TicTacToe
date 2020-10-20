@@ -2,8 +2,25 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+[System.Serializable]
+public class Player {
+	public Image panel;
+	public Text text;
+}
+
+[System.Serializable]
+public class PlayerColor {
+	public Color panelColor;
+	public Color textColor;
+}
+
 public class GameManager : MonoBehaviour
 {
+	public Player playerX;
+	public Player playerO;
+	public PlayerColor activePlayerColor;
+	public PlayerColor inactivePlayerColor;
+
 	public Text[] buttonArray;
 	private string playerSide;
 
@@ -20,6 +37,7 @@ public class GameManager : MonoBehaviour
 		moveCount = 0;
 		restartButton.SetActive(false);
 		SetGameManagerReferenceOnButtons();
+		SetPlayerColors(playerX, playerO);
 	}
 
 	void SetGameManagerReferenceOnButtons() {
@@ -107,6 +125,12 @@ public class GameManager : MonoBehaviour
 
 	void ChangeSides() {
 		playerSide = (playerSide == "X") ? "O" : "X";
+		if (playerSide == "X") {
+			SetPlayerColors(playerX, playerO);
+		}
+		else {
+			SetPlayerColors(playerO, playerX);
+		}
 	}
 
 	void SetGameOverText(string value) {
@@ -123,6 +147,7 @@ public class GameManager : MonoBehaviour
 
 		ResetButtonsText();
 		SetBoardInteractable(true);
+		SetPlayerColors(playerX, playerO);
 	}
 
 	void SetBoardInteractable (bool toggle) {
@@ -135,5 +160,12 @@ public class GameManager : MonoBehaviour
 		for (int i = 0; i < buttonArray.Length; i++) {
 			buttonArray[i].text = "";
 		}
+	}
+
+	void SetPlayerColors(Player newPlayer, Player oldPlayer) {
+		newPlayer.panel.color = activePlayerColor.panelColor;
+		newPlayer.text.color = activePlayerColor.textColor;
+		oldPlayer.panel.color = inactivePlayerColor.panelColor;
+		oldPlayer.text.color = inactivePlayerColor.textColor;
 	}
 }
