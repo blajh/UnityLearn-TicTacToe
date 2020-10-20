@@ -84,8 +84,7 @@ public class GameManager : MonoBehaviour
 		}
 
 		if (moveCount >= 9) {
-			gameOverPanel.SetActive(true);
-			gameOverText.text = "It's a draw!";
+			SetGameOverText("It's a draw!");
 		}
 
 		ChangeSides();
@@ -96,8 +95,7 @@ public class GameManager : MonoBehaviour
 			buttonArray[i].GetComponentInParent<Button>().interactable = false;
 		}
 
-		gameOverPanel.SetActive(true);
-		gameOverText.text = playerSide + " Wins!";
+		SetGameOverText(playerSide + " Wins!");
 
 	}
 
@@ -105,4 +103,8 @@ public class GameManager : MonoBehaviour
 		playerSide = (playerSide == "X") ? "O" : "X";
 	}
 
+	void SetGameOverText(string value) {
+		gameOverPanel.SetActive(true);
+		gameOverText.text = value;
+	}
 }
