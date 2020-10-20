@@ -10,12 +10,15 @@ public class GameManager : MonoBehaviour
 	public GameObject gameOverPanel;
 	public Text gameOverText;
 
+	public GameObject restartButton;
+
 	private int moveCount;
 
 	private void Awake() {
 		gameOverPanel.SetActive(false); 
 		playerSide = "X";
 		moveCount = 0;
+		restartButton.SetActive(false);
 		SetGameManagerReferenceOnButtons();
 	}
 
@@ -85,16 +88,15 @@ public class GameManager : MonoBehaviour
 
 		if (moveCount >= 9) {
 			SetGameOverText("It's a draw!");
+			restartButton.SetActive(true);
 		}
 
 		ChangeSides();
 	}
 
 	void GameOver() {
-		for (int i = 0; i < buttonArray.Length; i++) {
-			buttonArray[i].GetComponentInParent<Button>().interactable = false;
-		}
-
+		SetBoardInteractable(false);
+		restartButton.SetActive(true);
 		SetGameOverText(playerSide + " Wins!");
 
 	}
@@ -106,5 +108,28 @@ public class GameManager : MonoBehaviour
 	void SetGameOverText(string value) {
 		gameOverPanel.SetActive(true);
 		gameOverText.text = value;
+	}
+
+	public void RestartGame() {
+		playerSide = "X";
+		moveCount = 0;
+		gameOverPanel.SetActive(false);
+		restartButton.SetActive(false);
+
+
+		ResetButtonsText();
+		SetBoardInteractable(true);
+	}
+
+	void SetBoardInteractable (bool toggle) {
+		for (int i = 0; i < buttonArray.Length; i++) {
+			buttonArray[i].GetComponentInParent<Button>().interactable = toggle;
+		}
+	}
+
+	void ResetButtonsText () {
+		for (int i = 0; i < buttonArray.Length; i++) {
+			buttonArray[i].text = "";
+		}
 	}
 }
