@@ -41,63 +41,67 @@ public class GameManager : MonoBehaviour
 		if (buttonArray[0].text == playerSide &&
 			buttonArray[1].text == playerSide &&
 			buttonArray[2].text == playerSide) {
-			GameOver();
+			GameOver(playerSide);
 		}
 		else if (
 			buttonArray[3].text == playerSide &&
 			buttonArray[4].text == playerSide &&
 			buttonArray[5].text == playerSide) {
-			GameOver();
+			GameOver(playerSide);
 		}
 		else if (
 			buttonArray[6].text == playerSide &&
 			buttonArray[7].text == playerSide &&
 			buttonArray[8].text == playerSide) {
-			GameOver();
+			GameOver(playerSide);
 		}
 		else if (
 			buttonArray[0].text == playerSide &&
 			buttonArray[3].text == playerSide &&
 			buttonArray[6].text == playerSide) {
-			GameOver();
+			GameOver(playerSide);
 		}
 		else if (
 			buttonArray[1].text == playerSide &&
 			buttonArray[4].text == playerSide &&
 			buttonArray[7].text == playerSide) {
-			GameOver();
+			GameOver(playerSide);
 		}
 		else if (
 			buttonArray[2].text == playerSide &&
 			buttonArray[5].text == playerSide &&
 			buttonArray[8].text == playerSide) {
-			GameOver();
+			GameOver(playerSide);
 		}
 		else if (
 			buttonArray[0].text == playerSide &&
 			buttonArray[4].text == playerSide &&
 			buttonArray[8].text == playerSide) {
-			GameOver();
+			GameOver(playerSide);
 		}
 		else if (
 			buttonArray[2].text == playerSide &&
 			buttonArray[4].text == playerSide &&
 			buttonArray[6].text == playerSide) {
-			GameOver();
+			GameOver(playerSide);
 		}
 
 		if (moveCount >= 9) {
-			SetGameOverText("It's a draw!");
-			restartButton.SetActive(true);
+			GameOver("draw");
 		}
 
 		ChangeSides();
 	}
 
-	void GameOver() {
+	void GameOver(string winningPlayer) {
 		SetBoardInteractable(false);
 		restartButton.SetActive(true);
-		SetGameOverText(playerSide + " Wins!");
+		if (winningPlayer == "draw") {
+			SetGameOverText("It's a draw!");
+		}
+		else {
+			SetGameOverText(winningPlayer + " Wins!");
+		}
 
 	}
 
