@@ -1424,6 +1424,18 @@ MonoBehaviour:
   gameOverPanel: {fileID: 2073169216}
   gameOverText: {fileID: 1303205463}
   restartButton: {fileID: 1425425530}
+  playerX:
+    panel: {fileID: 1184587859}
+    text: {fileID: 1845958590}
+  playerO:
+    panel: {fileID: 1988510399}
+    text: {fileID: 172346996}
+  activePlayerColor:
+    panelColor: {r: 0, g: 0.8, b: 0.8, a: 1}
+    textColor: {r: 1, g: 0, b: 0.4, a: 1}
+  inactivePlayerColor:
+    panelColor: {r: 0.12941177, g: 0.17254902, b: 0.21568628, a: 1}
+    textColor: {r: 0, g: 0.8, b: 0.8, a: 1}
 --- !u!4 &1059800029
 Transform:
   m_ObjectHideFlags: 0
@@ -2710,7 +2722,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2073169217
 RectTransform:
   m_ObjectHideFlags: 0
