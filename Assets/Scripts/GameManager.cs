@@ -16,27 +16,24 @@ public class PlayerColor {
 
 public class GameManager : MonoBehaviour
 {
+	public Text[] buttonArray;
+	public GameObject gameOverPanel;
+	public Text gameOverText;
+	public GameObject restartButton;
 	public Player playerX;
 	public Player playerO;
 	public PlayerColor activePlayerColor;
 	public PlayerColor inactivePlayerColor;
 
-	public Text[] buttonArray;
 	private string playerSide;
-
-	public GameObject gameOverPanel;
-	public Text gameOverText;
-
-	public GameObject restartButton;
-
 	private int moveCount;
 
-	private void Awake() {
-		gameOverPanel.SetActive(false); 
+	void Awake() {
+		SetGameManagerReferenceOnButtons();
 		playerSide = "X";
+		gameOverPanel.SetActive(false); 
 		moveCount = 0;
 		restartButton.SetActive(false);
-		SetGameManagerReferenceOnButtons();
 		SetPlayerColors(playerX, playerO);
 	}
 
@@ -52,7 +49,6 @@ public class GameManager : MonoBehaviour
 	}
 
 	public void EndTurn() {
-		// Debug.Log("EndTurn is not implemented!");
 
 		moveCount++;
 
@@ -103,24 +99,12 @@ public class GameManager : MonoBehaviour
 			buttonArray[6].text == playerSide) {
 			GameOver(playerSide);
 		}
-
-		if (moveCount >= 9) {
+		else if (moveCount >= 9) {
 			GameOver("draw");
 		}
-
-		ChangeSides();
-	}
-
-	void GameOver(string winningPlayer) {
-		SetBoardInteractable(false);
-		restartButton.SetActive(true);
-		if (winningPlayer == "draw") {
-			SetGameOverText("It's a draw!");
-		}
 		else {
-			SetGameOverText(winningPlayer + " Wins!");
+			ChangeSides();
 		}
-
 	}
 
 	void ChangeSides() {
@@ -133,6 +117,24 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
+	void SetPlayerColors(Player newPlayer, Player oldPlayer) {
+		newPlayer.panel.color = activePlayerColor.panelColor;
+		newPlayer.text.color = activePlayerColor.textColor;
+		oldPlayer.panel.color = inactivePlayerColor.panelColor;
+		oldPlayer.text.color = inactivePlayerColor.textColor;
+	}
+
+	void GameOver(string winningPlayer) {
+		SetBoardInteractable(false);
+		if (winningPlayer == "draw") {
+			SetGameOverText("It's a draw!");
+		}
+		else {
+			SetGameOverText(winningPlayer + " Wins!");
+		}
+		restartButton.SetActive(true);
+	}
+
 	void SetGameOverText(string value) {
 		gameOverPanel.SetActive(true);
 		gameOverText.text = value;
@@ -143,11 +145,9 @@ public class GameManager : MonoBehaviour
 		moveCount = 0;
 		gameOverPanel.SetActive(false);
 		restartButton.SetActive(false);
-
-
-		ResetButtonsText();
-		SetBoardInteractable(true);
 		SetPlayerColors(playerX, playerO);
+		SetBoardInteractable(true);
+		ResetButtonsText();
 	}
 
 	void SetBoardInteractable (bool toggle) {
@@ -162,10 +162,4 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
-	void SetPlayerColors(Player newPlayer, Player oldPlayer) {
-		newPlayer.panel.color = activePlayerColor.panelColor;
-		newPlayer.text.color = activePlayerColor.textColor;
-		oldPlayer.panel.color = inactivePlayerColor.panelColor;
-		oldPlayer.text.color = inactivePlayerColor.textColor;
-	}
 }
