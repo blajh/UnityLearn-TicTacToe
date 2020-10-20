@@ -10,9 +10,12 @@ public class GameManager : MonoBehaviour
 	public GameObject gameOverPanel;
 	public Text gameOverText;
 
+	private int moveCount;
+
 	private void Awake() {
 		gameOverPanel.SetActive(false); 
 		playerSide = "X";
+		moveCount = 0;
 		SetGameManagerReferenceOnButtons();
 	}
 
@@ -29,6 +32,8 @@ public class GameManager : MonoBehaviour
 
 	public void EndTurn() {
 		// Debug.Log("EndTurn is not implemented!");
+
+		moveCount++;
 
 		if (buttonArray[0].text == playerSide &&
 			buttonArray[1].text == playerSide &&
@@ -77,6 +82,12 @@ public class GameManager : MonoBehaviour
 			buttonArray[6].text == playerSide) {
 			GameOver();
 		}
+
+		if (moveCount >= 9) {
+			gameOverPanel.SetActive(true);
+			gameOverText.text = "It's a draw!";
+		}
+
 		ChangeSides();
 	}
 
