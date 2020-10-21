@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
 {
 	public Text[] buttonArray;
 	public GameObject gameOverPanel;
+	public GameObject startInfo;
 	public Text gameOverText;
 	public GameObject restartButton;
 	public Player playerX;
@@ -144,6 +145,7 @@ public class GameManager : MonoBehaviour
 		moveCount = 0;
 		gameOverPanel.SetActive(false);
 		restartButton.SetActive(false);
+		startInfo.SetActive(true);
 		SetPlayerButtons(true);
 		SetPlayerColorsInactive();
 		ResetButtonsText();
@@ -176,6 +178,7 @@ public class GameManager : MonoBehaviour
 	public void StartGame() {
 		SetBoardInteractable(true);
 		SetPlayerButtons(false);
+		startInfo.SetActive(false);
 
 	}
 
