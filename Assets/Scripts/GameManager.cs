@@ -15,6 +15,7 @@ public class PlayerColor {
 	public Color textColor;
 }
 
+
 public class GameManager : MonoBehaviour
 {
 	public Text[] buttonArray;
@@ -26,15 +27,19 @@ public class GameManager : MonoBehaviour
 	public Player playerO;
 	public PlayerColor activePlayerColor;
 	public PlayerColor inactivePlayerColor;
+	public AudioManager audioManager;
 
 	private string playerSide;
 	private int moveCount;
 
 	void Awake() {
+
 		SetGameManagerReferenceOnButtons();
 		gameOverPanel.SetActive(false); 
 		moveCount = 0;
 		restartButton.SetActive(false);
+		PlayAudio(audioManager.choosePlayer);
+		
 	}
 
 	void SetGameManagerReferenceOnButtons() {
@@ -129,9 +134,13 @@ public class GameManager : MonoBehaviour
 		if (winningPlayer == "draw") {
 			SetGameOverText("It's a Draw!");
 			SetPlayerColorsInactive();
+			PlayAudio(audioManager.draw);
+
 		}
 		else {
 			SetGameOverText(winningPlayer + " Wins!");
+			PlayAudio(audioManager.win);
+
 		}
 		restartButton.SetActive(true);
 	}
@@ -149,6 +158,7 @@ public class GameManager : MonoBehaviour
 		SetPlayerButtons(true);
 		SetPlayerColorsInactive();
 		ResetButtonsText();
+		PlayAudio(audioManager.choosePlayer);
 	}
 
 	void SetBoardInteractable (bool toggle) {
@@ -179,6 +189,7 @@ public class GameManager : MonoBehaviour
 		SetBoardInteractable(true);
 		SetPlayerButtons(false);
 		startInfo.SetActive(false);
+		PlayAudio(audioManager.startGame);
 
 	}
 
@@ -192,6 +203,11 @@ public class GameManager : MonoBehaviour
 		playerX.text.color = inactivePlayerColor.textColor;
 		playerO.panel.color = inactivePlayerColor.panelColor;
 		playerO.text.color = inactivePlayerColor.textColor;
+	}
+
+	public void PlayAudio (AudioClip clip) {
+		//audioManager.audioSource.clip = clip;
+		audioManager.audioSource.PlayOneShot(clip);
 	}
 
 }
