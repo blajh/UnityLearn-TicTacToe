@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Player {
 	public Image panel;
 	public Text text;
+	public Button button;
 }
 
 [System.Serializable]
@@ -125,7 +126,8 @@ public class GameManager : MonoBehaviour
 	void GameOver(string winningPlayer) {
 		SetBoardInteractable(false);
 		if (winningPlayer == "draw") {
-			SetGameOverText("It's a draw!");
+			SetGameOverText("It's a Draw!");
+			SetPlayerColorsInactive();
 		}
 		else {
 			SetGameOverText(winningPlayer + " Wins!");
@@ -143,6 +145,8 @@ public class GameManager : MonoBehaviour
 		gameOverPanel.SetActive(false);
 		restartButton.SetActive(false);
 		ResetButtonsText();
+		SetPlayerButtons(true);
+		SetPlayerColorsInactive();
 	}
 
 	void SetBoardInteractable (bool toggle) {
@@ -171,7 +175,20 @@ public class GameManager : MonoBehaviour
 
 	public void StartGame() {
 		SetBoardInteractable(true);
+		SetPlayerButtons(false);
 
+	}
+
+	void SetPlayerButtons(bool toggle) {
+		playerX.button.interactable = toggle;
+		playerO.button.interactable = toggle;
+	}
+
+	void SetPlayerColorsInactive() {
+		playerX.panel.color = inactivePlayerColor.panelColor;
+		playerX.text.color = inactivePlayerColor.textColor;
+		playerO.panel.color = inactivePlayerColor.panelColor;
+		playerO.text.color = inactivePlayerColor.textColor;
 	}
 
 }
