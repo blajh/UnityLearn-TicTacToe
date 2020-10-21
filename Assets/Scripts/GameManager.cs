@@ -30,11 +30,9 @@ public class GameManager : MonoBehaviour
 
 	void Awake() {
 		SetGameManagerReferenceOnButtons();
-		playerSide = "X";
 		gameOverPanel.SetActive(false); 
 		moveCount = 0;
 		restartButton.SetActive(false);
-		SetPlayerColors(playerX, playerO);
 	}
 
 	void SetGameManagerReferenceOnButtons() {
@@ -141,12 +139,9 @@ public class GameManager : MonoBehaviour
 	}
 
 	public void RestartGame() {
-		playerSide = "X";
 		moveCount = 0;
 		gameOverPanel.SetActive(false);
 		restartButton.SetActive(false);
-		SetPlayerColors(playerX, playerO);
-		SetBoardInteractable(true);
 		ResetButtonsText();
 	}
 
@@ -160,6 +155,23 @@ public class GameManager : MonoBehaviour
 		for (int i = 0; i < buttonArray.Length; i++) {
 			buttonArray[i].text = "";
 		}
+	}
+
+	public void SetStartindSide(string startingSide) {
+		playerSide = startingSide;
+		if (playerSide == "X") {
+			SetPlayerColors(playerX, playerO);
+		}
+		else {
+			SetPlayerColors(playerO, playerX);
+		}
+
+		StartGame();
+	}
+
+	public void StartGame() {
+		SetBoardInteractable(true);
+
 	}
 
 }
