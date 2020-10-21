@@ -144,9 +144,9 @@ public class GameManager : MonoBehaviour
 		moveCount = 0;
 		gameOverPanel.SetActive(false);
 		restartButton.SetActive(false);
-		ResetButtonsText();
 		SetPlayerButtons(true);
 		SetPlayerColorsInactive();
+		ResetButtonsText();
 	}
 
 	void SetBoardInteractable (bool toggle) {
